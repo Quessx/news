@@ -1,0 +1,33 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.left-bar {
+    height: 100%;
+    width: 15%;
+    float: left;
+
+}
+
+.right-bar {
+    height: 100%;
+    width: 15%;
+    float: right;
+
+}
+
+.feed__item {
+    width: 50%;
+    background-color: #FFFFFF;
+    height: 100%;
+
+    border-radius: 2%;
+    padding: 20px;
+    margin: 20px auto;
+}
+
+.content-image img{
+    margin-top: 5px;
+    width: 100%;
+}
