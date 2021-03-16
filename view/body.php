@@ -34,7 +34,17 @@
                     </div>
                 </section>
 
-                <?php }?>
+                <?php } ?>
+
+                <?php if(!empty($view->arrRes['video'])){ ?>
+                <section>
+                    <div class="content-video">
+                        <video controls style="width: 100%; outline: none;">
+                            <source src="<?= $view->arrRes['video']; ?>" type="video/mp4">
+                        </video>
+                    </div>
+                </section>
+                <?php } ?>
             </div>
         </div>
     </div>

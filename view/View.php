@@ -2,9 +2,10 @@
 
 class View extends Model
 {
-    private $url = 'https://tjournal.ru/news';
+    private $url = 'https://tjournal.ru/news/entries/new';
+
+
     public $name = '';
-    public $name_logo = '';
     public $arrRes = [];
 
     public function __construct(){
@@ -29,21 +30,21 @@ class View extends Model
         $this->arrRes['content-text'] = $this->getDataByOrder($this->figure, '<div class="andropov_tweet__text"', '</div>', 1);
         $this->arrRes['hidden'] = $this->getDataByOrder($this->figure, '<div class="andropov_telegram__text__full l-hidden">', '</div>', 1);
 
-        if(empty($arrRes['title'])){
+        if(empty($this->arrRes['title'])){
             $this->arrRes['title'] = $this->getDataByOrder($this->res, '<div class="content-title content-title--short l-island-a">', '</div>', 1);
 
         }
 
-        if(empty($arrRes['content-header'])){
+        if(empty($this->arrRes['content-header'])){
             $this->arrRes['content-header'] = $this->getDataByOrder($this->figure, '<div class="andropov_tweet__header">', '</div>', 1);
 
         }
 
-        if(empty($arrRes['video'])){
+        if(empty($this->arrRes['video'])){
             $this->arrRes['video'] = $this->getDataByOrder($this->figure, 'data-source-url="', '"', 1);
         }
 
-        if(!empty($arrRes['images'])){
+        if(!empty($this->arrRes['images'])){
             $this->arrRes['content'] = $this->getDataByOrder($this->res, '<figure>', '</div>', 2);
         }
 
