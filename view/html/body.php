@@ -27,11 +27,11 @@
                     <?= $item['paragraph']; ?>
                 </div>
 
-                <?php if (!empty($getContents->name)) { ?>
+                <?php if (!empty($item['name'])) { ?>
 
                 <section>
                     <div class="content-image">
-                        <img src="view/img/<?= $getContents->name; ?>.jpg" alt="">
+                        <img src="view/img/<?= $item['name']; ?>.jpg" alt="">
                     </div>
                 </section>
 

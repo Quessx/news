@@ -32,7 +32,7 @@ class Model
             }
         }
 
-        $sql = "INSERT INTO main (`title`, `paragraph`, `images`, `video`, `content-header`, `content-text`) VALUES ('" . $contents->arrRes['title'] . "', '" . $contents->arrRes['paragraph'] . "', '" . $contents->arrRes['images'] . "', '" . $contents->arrRes['video'] . "','" . $contents->arrRes['content-header'] . "','" . $contents->arrRes['content-text'] . "');";
+        $sql = "INSERT INTO main (`title`, `paragraph`, `images`, `video`, `content-header`, `content-text`, `name`) VALUES ('" . $contents->arrRes['title'] . "', '" . $contents->arrRes['paragraph'] . "', '" . $contents->arrRes['images'] . "', '" . $contents->arrRes['video'] . "','" . $contents->arrRes['content-header'] . "','" . $contents->arrRes['content-text'] . "','" . $contents->arrRes['name'] . "');";
 
         if(mysqli_query($this->db, $sql)){}
         else {

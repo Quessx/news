@@ -3,7 +3,7 @@
 
 class GetContents extends Curl
 {
-    private $url = 'https://tjournal.ru/news/entries/new';
+    private $url = 'https://tjournal.ru/news';
 
 
     public $name = '';
@@ -54,7 +54,7 @@ class GetContents extends Curl
 
     public function saveImg(){
         if(!empty($this->arrRes['images'])){
-            $dir = __DIR__.'\..\img';
+            $dir = __DIR__.'\..\view\img';
             if(!file_exists($dir)) {
                 mkdir($dir, 0777);
             }
@@ -68,6 +68,7 @@ class GetContents extends Curl
             $out = curl_exec($ch);
             $img_sv = $dir."/$this->name.jpg";
             $img_sc = file_put_contents($img_sv, $out);
+            $this->arrRes['name'] = $this->name;
             curl_close($ch);
         }
     }
