@@ -12,6 +12,7 @@
 
         </div>
     </div>
+    <?php foreach ($model->selectData() as $item) { ?>
 
     <div class="feed__item">
         <div class="content__info">
@@ -20,27 +21,27 @@
         <div class="content">
             <div class="content-container">
                 <div class="content-title">
-                    <?= $view->arrRes['title']; ?>
+                    <?= $item['title']; ?>
                 </div>
                 <div class="content-text">
-                    <?= $view->arrRes['paragraph']; ?>
+                    <?= $item['paragraph']; ?>
                 </div>
 
-                <?php if (!empty($view->name)) { ?>
+                <?php if (!empty($getContents->name)) { ?>
 
                 <section>
                     <div class="content-image">
-                        <img src="view/img/<?= $view->name; ?>.jpg" alt="">
+                        <img src="view/img/<?= $getContents->name; ?>.jpg" alt="">
                     </div>
                 </section>
 
                 <?php } ?>
 
-                <?php if(!empty($view->arrRes['video'])){ ?>
+                <?php if(!empty($item['video'])){ ?>
                 <section>
                     <div class="content-video">
                         <video controls style="width: 100%; outline: none;">
-                            <source src="<?= $view->arrRes['video']; ?>" type="video/mp4">
+                            <source src="<?= $item['video']; ?>" type="video/mp4">
                         </video>
                     </div>
                 </section>
@@ -48,4 +49,6 @@
             </div>
         </div>
     </div>
+    <?php } ?>
+
 </div>
