@@ -1,5 +1,4 @@
 <?php
-require_once "GetContents.php";
 
 class Model
 {
